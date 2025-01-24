@@ -2,7 +2,7 @@ import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Book = ({ book }) => {
-  const { bookId, bookName, author, image, tags, category, rating } = book;
+  const { bookId, bookName, author, image, tags, category, rating, totalPages } = book;
   return (
     <Link to={`/books/${bookId}`}>
       <div className="card bg-base-100 w-96 border p-6">
@@ -25,6 +25,7 @@ const Book = ({ book }) => {
           <div className="border border-dashed my-3"></div>
           <div className="card-actions justify-between">
             <div className="badge badge-outline">{category}</div>
+            <div>Pages: {totalPages}</div>
             <div className="flex items-center justify-center gap-3">
               {rating} <FaRegStar />
             </div>
